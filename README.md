@@ -19,6 +19,7 @@ Special made for a Jetson Nano see [Q-engineering deep learning examples](https:
 | [YoloV4](https://github.com/Qengineering/YoloV4-ncnn-Jetson-Nano) | 608x608 full | 80 | 45.3 | 1.3 FPS | 0.2 FPS |
 | [YoloV5](https://github.com/Qengineering/YoloV5-ncnn-Jetson-Nano) | 640x640 small| 80 | 22.5 | 5.0 FPS | 1.6 FPS |
 | [YoloV6](https://github.com/Qengineering/YoloV6-ncnn-Jetson-Nano) | 640x640 nano | 80 | 35.0 | 10.5 FPS | 2.7 FPS |
+| [YoloV7](https://github.com/Qengineering/YoloV7-ncnn-Jetson-Nano) | 412x412 tiny| 80 | 38.7 | **18.0 FPS** | 4.43 FPS |
 | [YoloV7](https://github.com/Qengineering/YoloV7-ncnn-Jetson-Nano) | 640x640 tiny| 80 | 38.7 | **8.5 FPS** | 2.1 FPS |
 | [YoloX](https://github.com/Qengineering/YoloX-ncnn-Jetson-Nano) | 416x416 nano | 80 | 25.8 | 22.6 FPS | 7.0 FPS |
 | [YoloX](https://github.com/Qengineering/YoloX-ncnn-Jetson-Nano) | 416x416 tiny | 80 | 32.8 | 11.35 FPS | 2.8 FPS |
@@ -58,6 +59,14 @@ yolov7-tiny.param <br/>
 ## Running the app.
 To run the application load the project file YoloV7.cbp in Code::Blocks. More info or<br/> 
 if you want to connect a camera to the app, follow the instructions at [Hands-On](https://qengineering.eu/deep-learning-examples-on-raspberry-32-64-os.html#HandsOn).<br/><br/>
+
+------------
+
+### Dynamic sizes.
+YoloV7 can handle different input resolutions without changing the deep learning model.<br/>
+On line 28 of `yolov7main.cpp` you can change the `target_size` (default 640).<br/>
+Decreasing the size to say 412 will speed up the inference time. On the other hand, the resizing makes the image less detailed; the model will no longer detect all objects.<br/><br/>
+
 Many thanks to [nihui](https://github.com/nihui/) and [Xiang Shin Wuu](https://github.com/xiang-wuu)<br/><br/>
 ![output image]( https://qengineering.eu/images/BusstopYoloV7.jpg )
 
