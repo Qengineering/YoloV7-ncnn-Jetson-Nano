@@ -163,6 +163,7 @@ int YoloV7::load(int _target_size) {
 
     yolo.opt = ncnn::Option();
 
+    yolo.opt.use_vulkan_compute = true;
     yolo.opt.num_threads = ncnn::get_big_cpu_count();
 
     yolo.load_param("yolov7-tiny.param");
